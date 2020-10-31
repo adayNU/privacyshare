@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"net/url"
 	"os"
 	"strings"
@@ -27,7 +26,7 @@ func main() {
 		case temp != s:
 			var new string
 			new, err = stripQuery(temp)
-			if err != nil {
+			if err != nil || new == "" {
 				// Silently fail on non-URL.
 				break
 			}
@@ -61,7 +60,6 @@ func stripQuery(s string) (string, error) {
 	case "open.spotify.com":
 		q.Del("si")
 	case "www.amazon.com":
-		fmt.Println(u.Path)
 		if u.Path == "/s" {
 			q = url.Values{
 				"k": []string{q.Get("k")},
