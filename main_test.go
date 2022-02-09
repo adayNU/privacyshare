@@ -43,6 +43,11 @@ func (t *testSuite) TestStripQuery(c *check.C) {
 			// Note: the ref param is in the path itself, and I'll allow it for now.
 			o: "https://www.amazon.com/s?k=portable+air+conditioner",
 		},
+		// Twitter tacking URL gets t param removed.
+		{
+			i: "https://twitter.com/JoshuaPotash/status/1491067411658940417?s=20&t=VT3CwAkKohh0UQR6VZfqYw",
+			o: "https://twitter.com/JoshuaPotash/status/1491067411658940417?s=20",
+		},
 		// Invalid URL.
 		{
 			i: "Test\n",
