@@ -4,7 +4,15 @@ The idea of this tool is to quietly remove tracking parameters from URLs you cop
 Especially in cases where you aren't explicitly copying text (i.e. clicking "copy to clipboard"), tools
 tend to like to inject additional tracking parameters to understand who you're sharing things with.
 
-#### Example:
+## Installation
+
+_You must have go installed and your `$GOPATH` set._
+
+Ensure `install.sh` is executable (if not, run `chmod +x install.sh`). Then simply run `./install.sh`.
+
+To uninstall run `launchctl remove com.user.privacyshare`.
+
+## How it works
 When sharing a link in Spotify like this:  
 
 ![img](https://i.imgur.com/c9VWWRw.png)
