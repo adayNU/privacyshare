@@ -5,10 +5,10 @@ import (
 	"testing"
 )
 
-type testSuite struct {}
+type testSuite struct{}
 
 func (t *testSuite) TestStripQuery(c *check.C) {
-	var tcs = []struct{
+	var tcs = []struct {
 		i, o, err string
 	}{
 		// Generic URL remains unchanged.
@@ -48,11 +48,15 @@ func (t *testSuite) TestStripQuery(c *check.C) {
 			i: "https://twitter.com/JoshuaPotash/status/1491067411658940417?s=20&t=VT3CwAkKohh0UQR6VZfqYw",
 			o: "https://twitter.com/JoshuaPotash/status/1491067411658940417?s=20",
 		},
+		{
+			i: "https://www.threads.net/@adaynu/post/C9gefWavp6P?xmt=AQGzo1aVi9BtzKgL-qtcgF7NY4vp-erZVKBRkZTMF3NLIA",
+			o: "https://www.threads.net/@adaynu/post/C9gefWavp6P",
+		},
 		// Invalid URL.
 		{
 			i: "Test\n",
 			// Note: the ref param is in the path itself, and I'll allow it for now.
-			o: "",
+			o:   "",
 			err: ".*invalid control character in URL",
 		},
 	}
