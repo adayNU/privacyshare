@@ -69,6 +69,8 @@ func stripQuery(s string) (string, error) {
 		q = url.Values{}
 	case "twitter.com":
 		q.Del("t")
+	case "threads.net":
+		q.Del("xmt")
 	}
 
 	for k, _ := range q {
