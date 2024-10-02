@@ -52,6 +52,10 @@ func (t *testSuite) TestStripQuery(c *check.C) {
 			i: "https://www.threads.net/@adaynu/post/C9gefWavp6P?xmt=AQGzo1aVi9BtzKgL-qtcgF7NY4vp-erZVKBRkZTMF3NLIA",
 			o: "https://www.threads.net/@adaynu/post/C9gefWavp6P",
 		},
+		{
+			i: "https://techcrunch.com/2024/10/01/anthropic-hires-openai-co-founder-durk-kingma/?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAAGXu8YoOMUI0P4eWs3t14eXapcahBdK4ZaV1GYFOYFmBHgum5J7Kvo7QqoBp-wMh8-ApMZ5S9XPSsOnGTU0MZrPikEuBYvM7RYBGeDLVSosCbDr0v3W1dDcxrqzwPwiA4GQ3lvo8KHPQfaVyoxnd2w8SJvsQQCBUHjQdc2XUFxBY",
+			o: "https://techcrunch.com/2024/10/01/anthropic-hires-openai-co-founder-durk-kingma/",
+		},
 		// Invalid URL.
 		{
 			i: "Test\n",
