@@ -36,6 +36,7 @@ func main() {
 				os.Exit(1)
 				return
 			}
+
 			s = temp
 		}
 	}
@@ -75,6 +76,10 @@ func stripQuery(s string) (string, error) {
 
 	for k, _ := range q {
 		if strings.HasPrefix(k, "utm_") {
+			q.Del(k)
+		}
+		// Yahoo tracking parameters.
+		if strings.HasPrefix(k, "guce_") || k == "guccounter" {
 			q.Del(k)
 		}
 	}
