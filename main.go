@@ -70,7 +70,7 @@ func stripQuery(s string) (string, error) {
 		q = url.Values{}
 	case "twitter.com", "x.com":
 		q.Del("t")
-	case "www.threads.net":
+	case "www.threads.net", "www.threads.com":
 		q.Del("xmt")
 	}
 
